@@ -29,7 +29,6 @@ class PackageViewModel {
                 self.delegate?.failure()
             } else {
                 self.event.append(contentsOf: pack!)
-                print(self.event)
                 self.test.append(self.event[0].unidade.endereco)
                 self.delegate?.success()
             }

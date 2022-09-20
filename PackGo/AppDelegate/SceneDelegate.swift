@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(red: 99.00/255.00, green: 86.00/255.00, blue: 34.00/255.00, alpha: 1)
+        appearance.backgroundColor = UIColor(red: 27.00/255.00, green: 28.00/255.00, blue: 29.00/255.00, alpha: 1)
         navigationController.navigationBar.standardAppearance = appearance
         navigationController.navigationBar.scrollEdgeAppearance = appearance
     }

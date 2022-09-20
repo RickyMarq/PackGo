@@ -64,32 +64,7 @@ extension PackageController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: PackageCell? = tableView.dequeueReusableCell(withIdentifier: PackageCell.identifier, for: indexPath) as? PackageCell
-        let path = viewModel?.GeIndex(indexPath: indexPath)
-        let t = viewModel?.getTestIndex(indexPath: indexPath)
-        
-        
-        
-        cell?.descriptionLabel.text = path?.descricao ?? ""
-        
-        cell?.tipoLabel.text = path?.unidade.tipo ?? ""
-        
-        cell?.cidadeLabel.text = (t?.cidade ?? "") + "-" + (t?.uf ?? "")
-        cell?.dataLabel.text = path?.dtHrCriado ?? ""
-        
-        DispatchQueue.global().async {
-            if let imageUrl = URL(string: "https://proxyapp.correios.com.br" + (path?.urlIcone!)!) {
-                do {
-                    let data = try Data(contentsOf: imageUrl)
-                    let img = UIImage(data: data)
-                    DispatchQueue.main.async {
-                        cell?.iconImageView.image = img
-                    }
-                } catch {
-                    print("Error")
-                }
-            }
-        }
-        
+        cell?.prepareCell(model: (self.viewModel?.GeIndex(indexPath: indexPath))!, model2: (viewModel?.getTestIndex(indexPath: indexPath))!)
         return cell ?? UITableViewCell()
         
     }
@@ -108,7 +83,6 @@ extension PackageController: PackageViewModelProtocols {
    
     func success() {
         DispatchQueue.main.async {
-            print("Success")
             self.packageScreen?.packageTableView.reloadData()
             self.packageScreen?.activity.stopAnimating()
         }

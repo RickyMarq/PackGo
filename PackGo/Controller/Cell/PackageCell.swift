@@ -142,9 +142,27 @@ class PackageCell: UITableViewCell {
         ])
     }
     
-    func prepareCell(model: Evento) {
-        self.viewModel = PackageCellViewModel(object: model)
-        
+    func prepareCell(model: Evento, model2: UnidadeEndereco) {
+        self.viewModel = PackageCellViewModel(object: model, test: model2)
         self.descriptionLabel.text = viewModel?.descricao ?? ""
+        self.tipoLabel.text = viewModel?.unidade
+        self.dataLabel.text = viewModel?.data
+        self.cidadeLabel.text = viewModel!.cidade + "-" + (viewModel?.uf ?? "")
+
+        DispatchQueue.global().async {
+            if let imageUrl = URL(string: "https://proxyapp.correios.com.br" + (self.viewModel!.image)) {
+                do {
+                    let data = try Data(contentsOf: imageUrl)
+                    let img = UIImage(data: data)
+                    DispatchQueue.main.async {
+                        self.iconImageView.image = img
+                    }
+                } catch {
+                    print("Error")
+                }
+            }
+        }
+        
+        
     }
 }

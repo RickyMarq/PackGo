@@ -65,7 +65,7 @@ class SearchScreen: UIView {
         super.init(frame: frame)
         self.setUpUIElements()
         self.setUpConstraints()
-        self.backgroundColor = UIColor(red: 99.00/255.00, green: 86.00/255.00, blue: 3.00/255.00, alpha: 1)
+        self.backgroundColor = UIColor(red: 14.00/255.00, green: 15.00/255.00, blue: 15.00/255.00, alpha: 1)
     }
     
     required init?(coder: NSCoder) {
@@ -73,7 +73,7 @@ class SearchScreen: UIView {
     }
     
     private func SetUpBackgroundColor() {
-        let custom = UIColor(red: 47/256, green: 54/256.0, blue: 64/256.0, alpha: 33/256.0)
+        let custom = UIColor(red: 14/256, green: 15/256.0, blue: 16/256.0, alpha: 33/256.0)
         self.backgroundColor = custom
     }
     
