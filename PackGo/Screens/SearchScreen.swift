@@ -38,8 +38,9 @@ class SearchScreen: UIView {
         textField.adjustsFontSizeToFitWidth = true
         textField.backgroundColor = .black
         textField.autocorrectionType = .no
-        textField.placeholder = "Código de rastreio."
+        let placeholder = NSAttributedString(string: "Código de rastreio...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         textField.textColor = .white
+        textField.attributedPlaceholder = placeholder
         textField.text = "LB327135716HK"
         textField.autocapitalizationType = .allCharacters
         return textField
@@ -70,11 +71,6 @@ class SearchScreen: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-    }
-    
-    private func SetUpBackgroundColor() {
-        let custom = UIColor(red: 14/256, green: 15/256.0, blue: 16/256.0, alpha: 33/256.0)
-        self.backgroundColor = custom
     }
     
     private func configAppLogoImageViewConstraints() {

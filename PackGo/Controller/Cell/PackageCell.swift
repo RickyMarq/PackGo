@@ -26,16 +26,16 @@ class PackageCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
+        label.text = "Carregando"
         label.numberOfLines = 2
         label.textColor = .white
- //       label.font = UIFont.systemFontBold(ofSize: 12)
         return label
     }()
     
     lazy var tipoLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Unidade de Distribuição"
+        label.text = "Carregando"
         label.textAlignment = .left
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 13)
@@ -45,7 +45,7 @@ class PackageCell: UITableViewCell {
     lazy var cidadeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Unidade de Distribuição"
+        label.text = "Carregando"
         label.textAlignment = .left
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 11)
@@ -146,7 +146,9 @@ class PackageCell: UITableViewCell {
         self.viewModel = PackageCellViewModel(object: model, test: model2)
         self.descriptionLabel.text = viewModel?.descricao ?? ""
         self.tipoLabel.text = viewModel?.unidade
-        self.dataLabel.text = viewModel?.data
+        var dataFormatada = viewModel?.data.replacingOccurrences(of: "-", with: "/")
+        
+        self.dataLabel.text = dataFormatada
         self.cidadeLabel.text = viewModel!.cidade + "-" + (viewModel?.uf ?? "")
 
         DispatchQueue.global().async {
