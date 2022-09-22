@@ -16,6 +16,8 @@ class PackageService {
     func getPackage(packageCode: String, completion: @escaping ([Evento]?, Error?) -> Void) {
         guard let url = URL(string: "https://proxyapp.correios.com.br/v1/sro-rastro/" + packageCode) else {return}
         let session = URLSession.shared
+        
+        session.configuration.timeoutIntervalForResource = 5
         let task = session.dataTask(with: url) { data, response, error in
             guard let data = data else {return}
             do {

@@ -22,7 +22,7 @@ class PackageScreen: UIView {
     
     lazy var activity: UIActivityIndicatorView = {
         let activity = UIActivityIndicatorView()
-        activity.style = .whiteLarge
+        activity.style = UIActivityIndicatorView.Style.large
         activity.startAnimating()
         activity.hidesWhenStopped = true
         return activity

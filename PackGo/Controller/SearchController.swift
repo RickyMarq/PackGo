@@ -10,6 +10,7 @@ import UIKit
 class SearchController: UIViewController {
     
     var searchScreen: SearchScreen?
+    var alertManager: Alerts?
     
     override func loadView() {
         self.searchScreen = SearchScreen()
@@ -19,6 +20,7 @@ class SearchController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.searchScreen?.packCodeTextFieldProtocols(delegate: self)
+        self.alertManager = Alerts(controller: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,8 +28,13 @@ class SearchController: UIViewController {
     }
     
     @objc func getPackage() {
-        let vc = PackageController(package: (self.searchScreen?.packCodeTextField.text)!)
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        if self.searchScreen?.packCodeTextField.text == "" {
+            self.alertManager?.getAlert(title: "Erro", message: "Insira um valor válido", titleBtn: "Cancelar")
+        } else {
+            let vc = PackageController(package: (self.searchScreen?.packCodeTextField.text)!)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 
@@ -39,8 +46,7 @@ extension SearchController: UITextFieldDelegate {
         return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        self.searchScreen?.packCodeTextField.resignFirstResponder()
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.searchScreen?.endEditing(true)
     }
     

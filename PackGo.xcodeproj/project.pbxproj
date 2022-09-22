@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D26837D28DD181E00884843 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26837C28DD181E00884843 /* Alerts.swift */; };
 		1D28C2BC28D0E48B0013B03D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D28C2BB28D0E48B0013B03D /* AppDelegate.swift */; };
 		1D28C2BE28D0E48B0013B03D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D28C2BD28D0E48B0013B03D /* SceneDelegate.swift */; };
 		1D28C2C028D0E48B0013B03D /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D28C2BF28D0E48B0013B03D /* SearchController.swift */; };
 		1D28C2C528D0E4920013B03D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D28C2C428D0E4920013B03D /* Assets.xcassets */; };
 		1D28C2C828D0E4920013B03D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D28C2C628D0E4920013B03D /* LaunchScreen.storyboard */; };
 		1D28C2D628D0E5390013B03D /* SearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D28C2D528D0E5390013B03D /* SearchScreen.swift */; };
-		1D28C2D828D0EE480013B03D /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D28C2D728D0EE480013B03D /* SearchViewModel.swift */; };
 		1D28C2DA28D0EE630013B03D /* PackageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D28C2D928D0EE630013B03D /* PackageModel.swift */; };
 		1D28C2DD28D0F44F0013B03D /* PackageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D28C2DC28D0F44F0013B03D /* PackageService.swift */; };
 		1D28C2DF28D1059C0013B03D /* PackageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D28C2DE28D1059C0013B03D /* PackageController.swift */; };
@@ -24,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D26837C28DD181E00884843 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		1D28C2B828D0E48B0013B03D /* PackGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PackGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D28C2BB28D0E48B0013B03D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D28C2BD28D0E48B0013B03D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,7 +33,6 @@
 		1D28C2C728D0E4920013B03D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D28C2C928D0E4920013B03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D28C2D528D0E5390013B03D /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
-		1D28C2D728D0EE480013B03D /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		1D28C2D928D0EE630013B03D /* PackageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageModel.swift; sourceTree = "<group>"; };
 		1D28C2DC28D0F44F0013B03D /* PackageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageService.swift; sourceTree = "<group>"; };
 		1D28C2DE28D1059C0013B03D /* PackageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageController.swift; sourceTree = "<group>"; };
@@ -53,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D26837B28DD180000884843 /* Alerts  */ = {
+			isa = PBXGroup;
+			children = (
+				1D26837C28DD181E00884843 /* Alerts.swift */,
+			);
+			path = "Alerts ";
+			sourceTree = "<group>";
+		};
 		1D28C2AF28D0E48B0013B03D = {
 			isa = PBXGroup;
 			children = (
@@ -72,9 +80,11 @@
 		1D28C2BA28D0E48B0013B03D /* PackGo */ = {
 			isa = PBXGroup;
 			children = (
+				1D26837B28DD180000884843 /* Alerts  */,
+				1D28C2D028D0E4CB0013B03D /* Resources */,
 				1D28C2CF28D0E4C30013B03D /* AppDelegate */,
 				1D28C2D328D0E4FD0013B03D /* ViewModel */,
-				1D28C2D028D0E4CB0013B03D /* Resources */,
+				1D28C2D128D0E4F10013B03D /* Model */,
 				1D28C2DB28D0F4370013B03D /* Services */,
 				1D28C2D228D0E4F90013B03D /* Controller */,
 				1D28C2D428D0E5130013B03D /* Screens */,
@@ -122,7 +132,6 @@
 		1D28C2D328D0E4FD0013B03D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1D28C2D728D0EE480013B03D /* SearchViewModel.swift */,
 				1D643AEF28D3D27B00CCB556 /* PackageViewModel.swift */,
 				1D643AF128D3FD3200CCB556 /* PackageCellViewModel.swift */,
 			);
@@ -142,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				1D28C2DC28D0F44F0013B03D /* PackageService.swift */,
-				1D28C2D128D0E4F10013B03D /* Model */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -232,10 +240,10 @@
 				1D28C2DF28D1059C0013B03D /* PackageController.swift in Sources */,
 				1D28C2C028D0E48B0013B03D /* SearchController.swift in Sources */,
 				1D643AF028D3D27B00CCB556 /* PackageViewModel.swift in Sources */,
-				1D28C2D828D0EE480013B03D /* SearchViewModel.swift in Sources */,
 				1D28C2E128D105B10013B03D /* PackageScreen.swift in Sources */,
 				1D28C2BC28D0E48B0013B03D /* AppDelegate.swift in Sources */,
 				1D28C2BE28D0E48B0013B03D /* SceneDelegate.swift in Sources */,
+				1D26837D28DD181E00884843 /* Alerts.swift in Sources */,
 				1D28C2D628D0E5390013B03D /* SearchScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
