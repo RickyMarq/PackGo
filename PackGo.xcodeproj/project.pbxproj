@@ -21,6 +21,8 @@
 		1D28C2E428D115B90013B03D /* PackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D28C2E328D115B90013B03D /* PackageCell.swift */; };
 		1D643AF028D3D27B00CCB556 /* PackageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D643AEF28D3D27B00CCB556 /* PackageViewModel.swift */; };
 		1D643AF228D3FD3200CCB556 /* PackageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D643AF128D3FD3200CCB556 /* PackageCellViewModel.swift */; };
+		8C1B627F28E88EAF009797C2 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B627E28E88EAF009797C2 /* LoginScreen.swift */; };
+		8C1B628128E89159009797C2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B628028E89159009797C2 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		1D28C2E328D115B90013B03D /* PackageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCell.swift; sourceTree = "<group>"; };
 		1D643AEF28D3D27B00CCB556 /* PackageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageViewModel.swift; sourceTree = "<group>"; };
 		1D643AF128D3FD3200CCB556 /* PackageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCellViewModel.swift; sourceTree = "<group>"; };
+		8C1B627E28E88EAF009797C2 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		8C1B628028E89159009797C2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 				1D28C2E228D115A60013B03D /* Cell */,
 				1D28C2BF28D0E48B0013B03D /* SearchController.swift */,
 				1D28C2DE28D1059C0013B03D /* PackageController.swift */,
+				8C1B628028E89159009797C2 /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 			children = (
 				1D28C2D528D0E5390013B03D /* SearchScreen.swift */,
 				1D28C2E028D105B10013B03D /* PackageScreen.swift */,
+				8C1B627E28E88EAF009797C2 /* LoginScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -233,6 +239,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C1B628128E89159009797C2 /* LoginViewController.swift in Sources */,
+				8C1B627F28E88EAF009797C2 /* LoginScreen.swift in Sources */,
 				1D28C2E428D115B90013B03D /* PackageCell.swift in Sources */,
 				1D643AF228D3FD3200CCB556 /* PackageCellViewModel.swift in Sources */,
 				1D28C2DD28D0F44F0013B03D /* PackageService.swift in Sources */,
