@@ -7,7 +7,7 @@
 import UIKit
 
 class LoginScreen: UIView {
-
+	
 	lazy var subImageView:UIImageView = {
 		let image = UIImageView()
 		image.translatesAutoresizingMaskIntoConstraints = false
@@ -27,7 +27,7 @@ class LoginScreen: UIView {
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.textColor = .systemBackground
 		label.font = UIFont.boldSystemFont(ofSize: 40)
-		label.text = "Login"
+		label.text = "Bem-vindo(a)"
 		return label
 	}()
 	
@@ -37,7 +37,7 @@ class LoginScreen: UIView {
 		label.textColor = .systemBackground
 		label.textAlignment = .center
 		label.font = UIFont.systemFont(ofSize: 14)
-		label.text = "PackGO - Sua encomenda"
+		label.text = "Faça login para acessar seus rastreios"
 		return label
 	}()
 	
@@ -88,7 +88,7 @@ class LoginScreen: UIView {
 		btn.setTitleColor(.systemBackground, for: .normal)
 		return btn
 	}()
-		
+	
 	lazy var loginBtn:UIButton = {
 		let btn = UIButton(type: .system)
 		btn.translatesAutoresizingMaskIntoConstraints = false
@@ -108,6 +108,21 @@ class LoginScreen: UIView {
 		return view
 	}()
 	
+	lazy var signInGoogleView:UIButton = {
+		let btn = UIButton(type: .system)
+		btn.translatesAutoresizingMaskIntoConstraints = false
+		btn.backgroundColor = .red
+		btn.setImage(UIImage(named: "gmail"), for: .normal)
+		btn.imageView?.contentMode = .scaleAspectFit
+		btn.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 50)
+		btn.tintColor = .white
+		btn.setTitle("Entrar com Google", for: .normal)
+		btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+		btn.setTitleColor(.white, for: .normal)
+		btn.layer.cornerRadius = 8
+		btn.titleLabel?.textAlignment = .center
+		return btn
+	}()
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -120,6 +135,7 @@ class LoginScreen: UIView {
 		self.addSubview(self.recoverPswBtn)
 		self.addSubview(self.loginBtn)
 		self.addSubview(self.lineView)
+		self.addSubview(self.signInGoogleView)
 		self.configConstrains()
 	}
 	
@@ -140,7 +156,7 @@ class LoginScreen: UIView {
 			self.logoAppImageView.heightAnchor.constraint(equalToConstant: 108),
 			self.logoAppImageView.widthAnchor.constraint(equalToConstant: 108),
 			self.logoAppImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-	
+			
 			self.loginLabel.topAnchor.constraint(equalTo: self.logoAppImageView.bottomAnchor, constant: 16),
 			self.loginLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
 			
@@ -172,9 +188,12 @@ class LoginScreen: UIView {
 			self.lineView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -64),
 			self.lineView.heightAnchor.constraint(equalToConstant: 0.5),
 			
+			self.signInGoogleView.topAnchor.constraint(equalTo: self.lineView.bottomAnchor, constant: 48),
+			self.signInGoogleView.leadingAnchor.constraint(equalTo: self.loginBtn.leadingAnchor),
+			self.signInGoogleView.trailingAnchor.constraint(equalTo: self.loginBtn.trailingAnchor),
+			self.signInGoogleView.heightAnchor.constraint(equalToConstant: 41),
+				
 		])
 	}
-	
-	
 	
 }
